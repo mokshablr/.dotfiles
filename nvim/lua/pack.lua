@@ -3,23 +3,51 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+-- local ensure_packer = function()
+--   local fn = vim.fn
+--   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+--   if fn.empty(fn.glob(install_path)) > 0 then
+--     fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+--     vim.cmd [[packadd packer.nvim]]
+--     return true
+--   end
+--   return false
+-- end
+
+-- local packer_bootstrap = ensure_packer()
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   
+  -- Plugins
+  -- FuzzyFinder
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.4',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-
+  -- Commenting
+  use {
+      'numToStr/Comment.nvim',
+      config = function()
+          require('Comment').setup()
+      end
+  }
+  -- Theme
   use{ 
 	  'rose-pine/neovim', as = 'rose-pine'
   }
-  
+  -- Syntax Highlighting 
   use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
 
+  -- Lualine Status
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
 
+  -- LSP-Zero LSP 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v3.x',
@@ -36,6 +64,8 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 	  }
   }
-
+  -- if packer_bootstrap then
+  --     require('packer').sync()
+  -- end
 
 end)

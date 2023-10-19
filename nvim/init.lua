@@ -1,1 +1,3 @@
-require("arjun")
+require("pack")
+require("core")
+require("plugins")

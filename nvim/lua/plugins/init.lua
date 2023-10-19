@@ -1,0 +1,6 @@
+require("plugins.cmp")
+require("plugins.colorscheme")
+require("plugins.comment")
+require("plugins.lsp")
+require("plugins.telescope")
+require("plugins.treesitter")
