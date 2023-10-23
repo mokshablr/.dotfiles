@@ -19,4 +19,4 @@ opt.incsearch = true
 
 opt.termguicolors = true
 
-opt.scrolloff = 8
+opt.scrolloff = 15
