@@ -36,6 +36,9 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
+    -- Harpoon
+   use { 'ThePrimeagen/harpoon' } 
+    
     -- File Tree Explorer
     use {
         'nvim-tree/nvim-tree.lua',
@@ -79,6 +82,27 @@ return require('packer').startup(function(use)
             require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
         end
     }
+
+    -- use { 'L3MON4D3/LuaSnip' }
+    -- use { 'rafamadriz/friendly-snippets' }
+    -- use{'hrsh7th/nvim-cmp',
+    --     config = function ()
+    --         require'cmp'.setup {
+    --             snippet = {
+    --                 expand = function(args)
+    --                     require'luasnip'.lsp_expand(args.body)
+    --                 end
+    --             },
+    --
+    --             sources = {
+    --                 { name = 'luasnip' },
+    --                 -- more sources
+    --             },
+    --         }
+    --     end
+    -- }
+    -- use { 'saadparwaiz1/cmp_luasnip' }
+
     -- LSP-Zero LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -93,7 +117,7 @@ return require('packer').startup(function(use)
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
-            { 'L3MON4D3/LuaSnip' },
+            { 'L3MON4D3/LuaSnip' }
         }
     }
     if packer_bootstrap then

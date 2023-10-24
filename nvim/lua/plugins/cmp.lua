@@ -1,10 +1,11 @@
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
+
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
     -- `Enter` key to confirm completion
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
+    ['<Tab>'] = cmp.mapping.confirm({select = false}),
 
     -- Ctrl+Space to trigger completion menu
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -18,7 +19,18 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
   }),
 
+  sources = {
+      {name="nvim_lsp"},
+      {name="luasnip"}
+  },
+
   completion = {
 	  completeopt="menu, menuone, noinsert"
   }
 })
+
+local ls = require("luasnip") 
+require("luasnip.loaders.from_vscode").load({include={"html"}})
+
+ls.filetype_extend("javascript", {"html"})
+

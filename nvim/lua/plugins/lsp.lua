@@ -6,10 +6,9 @@ lsp_zero.on_attach(function(client, bufnr)
   -- to learn the available actions
   lsp_zero.default_keymaps({buffer = bufnr})
 end)
-
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {"pyright", "clangd"},
+  ensure_installed = {"pyright", "clangd","tsserver"},
   handlers = {
     lsp_zero.default_setup,
   },

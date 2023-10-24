@@ -51,21 +51,25 @@ buttons.val = {
 
 
 -- Footer section
-local function footer_info()
-    local total_plugins = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
-    return  "   "
-        .. total_plugins
-        .. " plugins"
-        .. "   v"
-        .. vim.version().major
-        .. "."
-        .. vim.version().minor
-        .. "."
-        .. vim.version().patch
-end
+-- local function footer_info()
+--     local total_plugins = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
+--     return  "   "
+--         .. total_plugins
+--         .. " plugins"
+--         .. "   v"
+--         .. vim.version().major
+--         .. "."
+--         .. vim.version().minor
+--         .. "."
+--         .. vim.version().patch
+-- end
 
+local function footer_quote(quote)
+    return quote
+end
 footer.val = {
-    footer_info(),
+    footer_quote("Write code to swap, not to stick."),
+    -- footer_info(),
 }
 
 
