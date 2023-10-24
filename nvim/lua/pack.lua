@@ -83,25 +83,27 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- use { 'L3MON4D3/LuaSnip' }
-    -- use { 'rafamadriz/friendly-snippets' }
-    -- use{'hrsh7th/nvim-cmp',
-    --     config = function ()
-    --         require'cmp'.setup {
-    --             snippet = {
-    --                 expand = function(args)
-    --                     require'luasnip'.lsp_expand(args.body)
-    --                 end
-    --             },
-    --
-    --             sources = {
-    --                 { name = 'luasnip' },
-    --                 -- more sources
-    --             },
-    --         }
-    --     end
-    -- }
-    -- use { 'saadparwaiz1/cmp_luasnip' }
+    use { 'L3MON4D3/LuaSnip' }
+    use { 'rafamadriz/friendly-snippets' }
+    use{'hrsh7th/nvim-cmp',
+        config = function ()
+            require'cmp'.setup {
+                snippet = {
+                    expand = function(args)
+                        require'luasnip'.lsp_expand(args.body)
+                    end
+                },
+
+                sources = {
+                    -- nvim_lsp first for elements, luasnip second for snippets
+                    { name = 'nvim_lsp'},
+                    { name = 'luasnip' },
+                    -- more sources
+                },
+            }
+        end
+    }
+    use { 'saadparwaiz1/cmp_luasnip' }
 
     -- LSP-Zero LSP
     use {
