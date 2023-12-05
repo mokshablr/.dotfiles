@@ -37,8 +37,8 @@ return require('packer').startup(function(use)
     }
 
     -- Harpoon
-   use { 'ThePrimeagen/harpoon' } 
-    
+   use { 'ThePrimeagen/harpoon' }
+
     -- File Tree Explorer
     use {
         'nvim-tree/nvim-tree.lua',
@@ -56,7 +56,10 @@ return require('packer').startup(function(use)
 
     -- Theme
     --OXOCARBON
-    use { 'nyoom-engineering/oxocarbon.nvim' }
+    -- use { 'nyoom-engineering/oxocarbon.nvim' }
+    -- Catpuccin
+    use { "catppuccin/nvim", as = "catppuccin" }
+
     -- Syntax Highlighting
     use({ 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } })
 
@@ -66,12 +69,21 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
+    use { "s3dman/rundi.nvim" }
+
     -- Lualine Status
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
+    --Cmdline
+    use {
+        'VonHeikemen/fine-cmdline.nvim',
+        requires = {
+            {'MunifTanjim/nui.nvim'}
+        }
+    }
     -- TMUX Nav
     use { 'christoomey/vim-tmux-navigator' }
 
@@ -95,7 +107,6 @@ return require('packer').startup(function(use)
                 },
 
                 sources = {
-                    -- nvim_lsp first for elements, luasnip second for snippets
                     { name = 'nvim_lsp'},
                     { name = 'luasnip' },
                     -- more sources

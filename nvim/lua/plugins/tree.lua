@@ -18,7 +18,11 @@ require("nvim-tree").setup({
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+    -- dotfiles = true,
+    git_ignored = false,
+    custom ={
+        "\\.DS_Store",
+    }
   },
   actions = {
       open_file = {

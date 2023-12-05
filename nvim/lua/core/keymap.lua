@@ -25,4 +25,5 @@ end)
 -- nvim-tree
 map.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle
 map.set("n", "<leader>d", ":NvimTreeFocus<CR>") -- Focus on tree when file already open
+map.set("n", "<leader>c", ":NvimTreeFindFile<CR>")
 
