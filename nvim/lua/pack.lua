@@ -66,12 +66,17 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
+    -- Neville run code
     use { "s3dman/rundi.nvim" }
 
+    -- nvim-notify
+    use { 'rcarriga/nvim-notify' }
+    
     -- Lualine Status
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+        config = function() require("lualine").setup {} end
     }
 
     -- Gitsigns for tracking git changes
@@ -83,16 +88,8 @@ return require('packer').startup(function(use)
     -- Blank Indents to demark indentations
     use { 
         "lukas-reineke/indent-blankline.nvim",
-        config = function () require('ibl').setup{scope = {enabled = false}} end
     }
 
-    --Cmdline
-    use {
-        'VonHeikemen/fine-cmdline.nvim',
-        requires = {
-            {'MunifTanjim/nui.nvim'}
-        }
-    }
     -- TMUX Nav
     use { 'christoomey/vim-tmux-navigator' }
 

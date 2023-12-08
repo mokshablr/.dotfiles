@@ -11,7 +11,6 @@ lsp.on_attach(function(client, bufnr)
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
@@ -31,7 +30,7 @@ require('mason-lspconfig').setup({
                     Lua = {
                         diagnostics = {
                             -- Sets vim as a global var to avoid undefined vim warnings
-                            globals = { "vim" }
+                            globals = { "vim" },
                         }
                     }
                 }
@@ -40,3 +39,6 @@ require('mason-lspconfig').setup({
     },
 })
 
+vim.diagnostic.config({
+  virtual_text = false,
+})

@@ -15,7 +15,11 @@ rundi.setup({
       compiler_args = "-Wall -g",
       output_format = "%:t:r",
     },
+    lua = {
+        compiler = "lua",
+    }
   },
   silent = true,
   keymap = "<C-c>",
 })
+

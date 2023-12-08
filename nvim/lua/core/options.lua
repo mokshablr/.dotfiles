@@ -28,3 +28,12 @@ opt.pumheight = 5
 
 -- Turn of case-sensitivity for /find
 opt.ignorecase = true
+
+-- Continuous floating diagnostics
+-- vim.o.updatetime = 450
+-- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+--   group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
+--   callback = function ()
+--     vim.diagnostic.open_float(nil, {focus=false})
+--   end
+-- })

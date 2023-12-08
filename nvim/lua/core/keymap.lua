@@ -16,18 +16,18 @@ map.set("n", "<leader>y", "\"+y")
 map.set("v", "<leader>y", "\"+y")
 map.set("n", "<leader>Y", "\"+Y")
 
--- Open other projects
-map.set("n", "<leader>f", function ()
+-- Format file
+map.set("n", "<leader>]", function()
     vim.lsp.buf.format()
 end)
 
 -- Diagnostic popup
-map.set("n", "<leader>s", function() vim.diagnostic.open_float() end)
+map.set("n", "<leader>i", function() vim.diagnostic.open_float() end)
 
 -- Plugins
 -- nvim-tree
 map.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- Toggle
-map.set("n", "<leader>d", ":NvimTreeFocus<CR>") -- Focus on tree when file already open
+map.set("n", "<leader>d", ":NvimTreeFocus<CR>")  -- Focus on tree when file already open
 map.set("n", "<leader>c", ":NvimTreeFindFile<CR>")
 
 --Trouble - Error messages
@@ -36,4 +36,4 @@ map.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagn
 map.set("n", "<leader>h", function() require("trouble").toggle("document_diagnostics") end)
 map.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
 map.set("n", "<leader>xl", function() require("trouble").toggle("loclist") end)
-map.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+map.set("n", "<leader>gr", function() require("trouble").toggle("lsp_references") end)
