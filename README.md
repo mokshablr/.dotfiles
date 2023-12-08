@@ -43,10 +43,6 @@ Resizing panes:
 - Source the tmux config using ```Prefix + r``` or ```Prefix + :source-file ~/.config/tmux/tmux.conf```
 
 
-- ```<space>pv``` for exiting the file back to netrw (not used now because of nvim-tree)
-- ```<space>pf``` for the telescope fuzzyfinder
-- ```<space>ps``` for live grep with telescope
-
 
 # Yabai/SKHD
 ## Keybinds:
