@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Format: 0xttrrggbb
+
+
 ### Sonokai
 # export BLACK=0xff181819
 # export WHITE=0xffe2e2e3
@@ -17,7 +20,8 @@
 
 ### Catppuccin
 export BLACK=0xff181926
-export WHITE=0xffcad3f5
+# export WHITE=0xffcad3f5
+export WHITE=0xffffffff
 export RED=0xffed8796
 export GREEN=0xffa6da95
 export BLUE=0xff8aadf4
@@ -27,8 +31,9 @@ export MAGENTA=0xffc6a0f6
 export GREY=0xff939ab7
 export TRANSPARENT=0x00000000
 export BG0=0xff1e1e2e
-export BG1=0x603c3e4f
+export BG1=0x3f3c3e4f
 export BG2=0x60494d64
+# export BG2=0x00000000
 
 # General bar colors
 export BAR_COLOR=$BG0

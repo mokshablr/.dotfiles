@@ -19,7 +19,7 @@ do
     padding_left=1
     padding_right=1
     label.padding_right=20
-    icon.highlight_color=$RED
+    icon.highlight_color=$GREEN
     label.color=$GREY
     label.highlight_color=$WHITE
     label.font="sketchybar-app-font:Regular:13.0"
@@ -35,8 +35,8 @@ do
 done
 
 space_creator=(
-  icon=􀆊
-  icon.font="$FONT:Heavy:10.0"
+  # icon=􀆊
+  icon.font="SF Pro:Semibold:10.0"
   padding_left=10
   padding_right=8
   label.drawing=off

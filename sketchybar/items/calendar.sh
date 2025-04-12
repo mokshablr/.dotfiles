@@ -2,8 +2,10 @@
 
 calendar=(
   icon=cal
-  icon.font="SF Pro:Semibold:13.0"
-  icon.padding_right=0
+  # icon.font="SF Pro:Semibold:13.0"
+  icon.font="Ticking Timebomb BB:Regular:17.0"
+  # icon.padding_right=0
+  icon.padding_right=10
   label.width=45
   label.align=right
   padding_left=15

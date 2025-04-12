@@ -21,8 +21,10 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /
 # Setting up the general bar appearance of the bar
 bar=(
   height=38
-  color=0xee000000
-  border_width=2
+  # color=0x0f000000
+  # color=0xff000000
+  color=0x00ffffff
+  border_width=0
   border_color=$BAR_BORDER_COLOR
   shadow=off
   position=top
@@ -39,11 +41,13 @@ sketchybar --bar "${bar[@]}"
 # Setting up default values
 defaults=(
   updates=when_shown
-  icon.font="$FONT:Bold:14.0"
+  # icon.font="$FONT:Bold:14.0"
+  icon.font="Ticking Timebomb BB:Regular:17.0"
   icon.color=$ICON_COLOR
   icon.padding_left=$PADDINGS
   icon.padding_right=$PADDINGS
-  label.font="$FONT:Semibold:13.0"
+  # label.font="$FONT:Semibold:13.0"
+  label.font="Ticking Timebomb BB:Regular:20.0"
   label.color=$LABEL_COLOR
   label.padding_left=$PADDINGS
   label.padding_right=$PADDINGS
@@ -65,18 +69,19 @@ sketchybar --default "${defaults[@]}"
 
 # Left
 source "$ITEM_DIR/front_app.sh"
-source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/yabai.sh"
+# source "$ITEM_DIR/spaces.sh"
+# source "$ITEM_DIR/yabai.sh"
 
 # Center
 
 # Right
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/wifi.sh"
-source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/cpu.sh"
-source "$ITEM_DIR/svim.sh"
+# source "$ITEM_DIR/year_progress.sh"
+# source "$ITEM_DIR/wifi.sh"
+# source "$ITEM_DIR/volume.sh"
+# source "$ITEM_DIR/cpu.sh"
+# source "$ITEM_DIR/svim.sh"
 
 sketchybar --hotload on
 
