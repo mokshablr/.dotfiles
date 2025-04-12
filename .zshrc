@@ -1,3 +1,11 @@
+
+# Aerospace hack to ghostty tiling without tab issues
+aerospace layout tiling
+# TMUX on startup
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach || tmux new-session
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -136,9 +144,10 @@ alias nv='nvim'
 alias cl='clear'
 alias py='python3'
 alias mp='multipass'
+alias theme='ghostty +list-themes'
 
 # ssh into BD VM
-alias sshbd='ssh pes2ug22cs095@100.111.4.14'
+alias sshbd='ssh pes2ug22cs095@100.100.243.214'
 
 # Git alias
 alias ga='git add'
@@ -158,7 +167,6 @@ set noswapfile
 
 #libxml2 for c compiler
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
@@ -170,3 +178,23 @@ eval $(thefuck --alias fk)
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+# TODO: remove when free
+# ORCA 6.0.1 secion
+export PATH=/Users/arjun.maniyani/Library/orca_6_0_1:$PATH
+
+export PATH=$HOME/openmpi/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/openmpi/lib:$LD_LIBRARY_PATH 
+
+if command -v ngrok &>/dev/null; then
+    eval "$(ngrok completion)"
+fi
+
+
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
