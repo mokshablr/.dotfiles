@@ -8,7 +8,7 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew}:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
   let
     configuration = { pkgs, ... }: {
 
@@ -17,9 +17,11 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
-        [ pkgs.neovim
+        [ 
+          pkgs.neovim
           pkgs.tmux
           pkgs.obsidian
+          pkgs.raycast
         ];
 
       homebrew = {
@@ -29,16 +31,26 @@
         ];
         casks = [
             # Homebrew casks here if not available as pkgs.<cask>
+            # "zen-browser"
+            "ghostty"
         ];
         masApps = {
           # Mac App Store apps. 
           # Eg: "Yoink" = 457622435; Find app id by using `mas search <app_name>`
         };
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
       };
 
       fonts.packages = [
         pkgs.nerd-fonts.jetbrains-mono
       ];
+
+      system.defaults = {
+        dock.autohide = true;
+        NSGlobalDomain.AppleInterfaceStyle = "Dark";
+        NSGlobalDomain.KeyRepeat = 2;
+      };
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
