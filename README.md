@@ -1,15 +1,20 @@
 # NVIM
+Added as a submodule, to get files run:
+
+```
+cd nvim
+git submodule update --init --recursive
+```
+
+Run `git pull` inside nvim to pull latest changes in the submodule.
+
 
 ## Main tools:
-- Package Manager: Packer
-- LSP: LSP-Zero
+- Package Manager: Lazy
+- LSP: Mason and nvim-lspconfig
 
 ## Adding Plugins:
-- Add the code into pack.lua within ```~/.config/nvim/lua```
-    - Type ```:so``` to source the file.
-    - Type ```:PackerSync``` to install the plugin using packer.
-- If the plugin requires a setup, go to ```~/.config/nvim/lua/plugins``` and create a newfile with ```%filename.lua``` and do the setup.
-
+- Add packages inside ```~/.config/nvim/lua/plugins or plugins/init.lua```
 
 - ```<space>pv``` for exiting the file back to netrw
 - ```<space>pf``` for the telescope fuzzyfinder
